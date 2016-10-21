@@ -33,7 +33,7 @@ public class Ball extends Actor
     
     private int ydireccion=205;
     private int xdireccion=226;
-    
+    private Ball ball;
     
     ////////////////// constructors /////////////////////
     
@@ -64,6 +64,7 @@ public class Ball extends Actor
         velX = theVelX;
         velY = theVelY;
         updateImage();
+        
     }
     
     ///////////////////// Methods ///////////////////////////////
@@ -82,6 +83,7 @@ public class Ball extends Actor
         tocaCuadro();
         limites();
         tocaPaleta();
+        Ball();
     }
     
     /**
@@ -107,11 +109,12 @@ public class Ball extends Actor
     }
     
     public void tocaCuadro(){
+        World mundo = getWorld();
         if(isTouching(Brick.class)){
             removeTouching(Brick.class);
             velY=2;
         }
-        
+        ((BreakoutWorld)mundo).checkIfWon();
     }
     public void tocaPaleta(){
         if(isTouching(Paddle.class))
@@ -135,7 +138,17 @@ public class Ball extends Actor
         }
         if(ydireccion<2){
             velY=1;
-            System.out.println("Toco principio x ");
+            System.out.println("toco principio de y ");
+            
         }
+    }
+    
+    public void Ball(){
+        World mundo = getWorld();
+           
+       if(ydireccion>500){
+            ((BreakoutWorld)mundo).newBall();
+            getWorld().removeObject(this);
+        } 
     }
 }

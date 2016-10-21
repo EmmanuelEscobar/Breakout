@@ -46,6 +46,7 @@ public class BreakoutWorld extends World
 
     /** the number of balls created in the game so far */
     private int numBalls = 0;
+   
 
     /** a message displayed for the user */
     private Message message = null;
@@ -59,6 +60,7 @@ public class BreakoutWorld extends World
     {
         super (WIDTH, HEIGHT, RESOLUTION,false);
         setUpBreakout();
+        
         prepare();
     }
 
@@ -77,7 +79,6 @@ public class BreakoutWorld extends World
     {
         /* increment the number of balls created */
         numBalls++;
-
         /* check if used 3 or more */
         if (numBalls > 3)
         {
@@ -91,6 +92,7 @@ public class BreakoutWorld extends World
             message.setText("Ball " + numBalls);
         }
     }
+    
 
     /**
      * Method to check if the game is over and if so tell the user

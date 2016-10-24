@@ -77,7 +77,7 @@ public class Message extends Actor
         GreenfootImage image = new GreenfootImage(width,height);
         image.setFont(font);
         image.clear();
-        image.setColor(Color.BLACK);
+        image.setColor(Color.YELLOW);
         image.drawString(text, 5, height / 2);
         setImage(image);
     }  

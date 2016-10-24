@@ -114,7 +114,7 @@ public class Ball extends Actor
         if(isTouching(Brick.class)){
             removeTouching(Brick.class);
             velY=2;
-            setColor(color.BLUE);
+            setColor(color.GREEN);
         }
         ((BreakoutWorld)mundo).checkIfWon();
     }
@@ -122,26 +122,25 @@ public class Ball extends Actor
         if(isTouching(Paddle.class))
         {
             velY=-2;
-            System.out.println("Toco paleta ");
+            //System.out.println("Toco paleta ");
         }  
     }
     public void limites(){
         if(xdireccion>400){
             velX=-1;
-            System.out.println("Toco final x ");
+            //System.out.println("Toco final x ");
         }
         if(xdireccion<2){
             velX=1;
-            System.out.println("Toco principio x ");
+          //  System.out.println("Toco principio x ");
         }
         if(ydireccion>500){
             velY=1;
-            System.out.println("Toco final y ");
+            //System.out.println("Toco final y ");
         }
         if(ydireccion<2){
             velY=1;
-            System.out.println("toco principio de y ");
-            
+            //System.out.println("toco principio de y ");
         }
     }
     

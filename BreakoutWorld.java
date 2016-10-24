@@ -41,6 +41,10 @@ public class BreakoutWorld extends World
     public static final Color[] colorArray = {Color.RED, Color.RED,
             Color.ORANGE, Color.ORANGE, Color.GREEN,Color.GREEN,
             Color.YELLOW,Color.YELLOW,  Color.CYAN, Color.CYAN};
+    
+            
+    private Counter contTiempo;
+    private SimpleTimer reloj;
 
     ////////////////// instance fields ///////////////////////////////
 
@@ -61,6 +65,14 @@ public class BreakoutWorld extends World
         super (WIDTH, HEIGHT, RESOLUTION,false);
         setUpBreakout();
         
+        contTiempo = new Counter("Tiempo:");
+        
+        contTiempo.setValue(30);
+        reloj = new SimpleTimer();
+        
+        addObject(contTiempo,300,10);
+        
+        
         prepare();
     }
 
@@ -75,6 +87,14 @@ public class BreakoutWorld extends World
     /**
      * Method to add a new ball
      */
+    
+    public void tiempo(){
+        if(reloj.millisElapsed() > 1000){
+        contTiempo.add(-1);
+        reloj.mark();
+        }
+    }
+    
     public void newBall() 
     {
         /* increment the number of balls created */
@@ -158,7 +178,7 @@ public class BreakoutWorld extends World
     public void updateImage()
     {
         GreenfootImage image = new GreenfootImage(WIDTH,HEIGHT);
-        image.setColor(new Color(200,200,200));
+        image.setColor(new Color(100,100,100));
         image.fillRect(0,0,WIDTH,HEIGHT);
         setBackground(image);
     }
@@ -167,6 +187,12 @@ public class BreakoutWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
+    
+    public void act(){
+    tiempo();
+    
+    }
+    
     private void prepare()
     {
     }

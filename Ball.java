@@ -126,7 +126,10 @@ public class Ball extends Actor
         }  
     }
     public void limites(){
-        if(xdireccion>400){
+        
+        World mundo =getWorld();
+        
+        if(xdireccion>getWorld().getWidth()-5){
             velX=-1;
             //System.out.println("Toco final x ");
         }
@@ -134,7 +137,8 @@ public class Ball extends Actor
             velX=1;
           //  System.out.println("Toco principio x ");
         }
-        if(ydireccion>500){
+        if(ydireccion>getWorld().getHeight()){
+            
             velY=1;
             //System.out.println("Toco final y ");
         }

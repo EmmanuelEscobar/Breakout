@@ -193,9 +193,8 @@ public class BreakoutWorld extends World
     
     public void act(){
     tiempo();
-    if(contTiempo.getValue()==110){
-        addObject(new Paddle(),(WIDTH / 1),HEIGHT - 50);
-        
+    if(contTiempo.getValue()==100){
+        addObject(new Paddle(),(WIDTH / 4),HEIGHT - 50);
         }
     }
     

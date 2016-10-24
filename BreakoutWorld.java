@@ -67,7 +67,7 @@ public class BreakoutWorld extends World
         
         contTiempo = new Counter("Tiempo:");
         
-        contTiempo.setValue(30);
+        contTiempo.setValue(120);
         reloj = new SimpleTimer();
         
         addObject(contTiempo,300,10);
@@ -145,6 +145,9 @@ public class BreakoutWorld extends World
 
         /* create the paddle */
         addObject(new Paddle(),(WIDTH / 2),HEIGHT - 30);
+        
+        
+        
 
         /* create a new ball */
         newBall();
@@ -190,7 +193,10 @@ public class BreakoutWorld extends World
     
     public void act(){
     tiempo();
-    
+    if(contTiempo.getValue()==110){
+        addObject(new Paddle(),(WIDTH / 1),HEIGHT - 50);
+        
+        }
     }
     
     private void prepare()

@@ -62,10 +62,9 @@ public class Paddle extends Actor
      */
     public void act() 
     {
-        reloj = new SimpleTimer();
-        
+       
         mueve();
-        tiempo();
+        
     }
     
     /**
@@ -74,6 +73,7 @@ public class Paddle extends Actor
      */
     public void updateImage()
     {
+                
         GreenfootImage image = new GreenfootImage(width,height);
         image.setColor(color);
         image.fillRect(0,0,width,height);
@@ -90,11 +90,5 @@ public class Paddle extends Actor
         
     }
     
-    public void tiempo(){
-        if(reloj.millisElapsed() > 10){
-        //contTiempo.add(-1);
-        System.out.println("Over Time");
-        reloj.mark();
-        }
     }
-}
+

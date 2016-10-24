@@ -22,7 +22,10 @@ public class Paddle extends Actor
     private int moveAmount = 5;
     
     /** color of this paddle */
-    private Color color = Color.BLACK;
+    public Color color = Color.BLACK;
+    
+    
+    private SimpleTimer reloj;
     
     ///////////// constructors ///////////////////////////
   
@@ -59,7 +62,10 @@ public class Paddle extends Actor
      */
     public void act() 
     {
+        reloj = new SimpleTimer();
+        
         mueve();
+        tiempo();
     }
     
     /**
@@ -82,5 +88,13 @@ public class Paddle extends Actor
          move(4);
         }
         
+    }
+    
+    public void tiempo(){
+        if(reloj.millisElapsed() > 10){
+        //contTiempo.add(-1);
+        System.out.println("Over Time");
+        reloj.mark();
+        }
     }
 }

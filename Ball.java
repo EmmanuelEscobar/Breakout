@@ -22,7 +22,7 @@ public class Ball extends Actor
     private int width = radius * 2;
     
     /** the color of the ball */
-    private Color color = Color.BLACK;
+    private Color color = Color.PINK;
     
     /** the amount of change in x during each act */
     private int velX;
@@ -110,9 +110,11 @@ public class Ball extends Actor
     
     public void tocaCuadro(){
         World mundo = getWorld();
+        Brick aux ;
         if(isTouching(Brick.class)){
             removeTouching(Brick.class);
             velY=2;
+            setColor(color.BLUE);
         }
         ((BreakoutWorld)mundo).checkIfWon();
     }
@@ -145,10 +147,10 @@ public class Ball extends Actor
     
     public void Ball(){
         World mundo = getWorld();
-           
        if(ydireccion>500){
             ((BreakoutWorld)mundo).newBall();
             getWorld().removeObject(this);
-        } 
+        }
     }
+   
 }

@@ -15,4 +15,6 @@ comment4.target=void\ updateImage()
 comment4.text=\r\n\ Method\ to\ create\ and\ set\ the\ image\ for\ this\ paddle.\ \ Invoke\r\n\ this\ method\ again\ when\ the\ width,\ height,\ or\ color\ change.\r\n
 comment5.params=
 comment5.target=void\ mueve()
-numComments=6
+comment6.params=
+comment6.target=void\ tiempo()
+numComments=7

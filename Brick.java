@@ -64,5 +64,9 @@ public class Brick extends Actor
         image.fillRect(0,0,width,height);
         setImage(image);
     }
+    public Color getColor()
+    {
+        return(color);
+    }
   
 }

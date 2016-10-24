@@ -13,4 +13,6 @@ comment3.text=\r\n\ Method\ to\ act\ during\ a\ time\ step\ \r\n
 comment4.params=
 comment4.target=void\ updateImage()
 comment4.text=\r\n\ Method\ to\ create\ the\ image\ and\ set\ it\ for\ this\ brick.\r\n\ If\ you\ change\ the\ width,\ height,\ or\ color\ invoke\ this\r\n\ method.\r\n
-numComments=5
+comment5.params=
+comment5.target=java.awt.Color\ getColor()
+numComments=6

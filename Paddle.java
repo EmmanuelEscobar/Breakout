@@ -22,7 +22,7 @@ public class Paddle extends Actor
     private int moveAmount = 5;
     
     /** color of this paddle */
-    public Color color = Color.WHITE;
+    private Color color = Color.WHITE;
     
     
     private SimpleTimer reloj;

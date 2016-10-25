@@ -40,7 +40,7 @@ public class BreakoutWorld extends World
     /** the colors to use for each row of bricks */
     public static final Color[] colorArray = {Color.RED, Color.RED,
             Color.ORANGE, Color.ORANGE, Color.GREEN,Color.GREEN,
-            Color.YELLOW,Color.YELLOW,  Color.CYAN, Color.CYAN};
+            Color.BLUE,Color.BLUE,  Color.PINK, Color.PINK};
     
             
     private Counter contTiempo;
@@ -145,10 +145,6 @@ public class BreakoutWorld extends World
 
         /* create the paddle */
         addObject(new Paddle(),(WIDTH / 2),HEIGHT - 30);
-        
-        
-        
-
         /* create a new ball */
         newBall();
 
@@ -193,9 +189,16 @@ public class BreakoutWorld extends World
     
     public void act(){
     tiempo();
-    if(contTiempo.getValue()==100){
-        addObject(new Paddle(),(WIDTH / 4),HEIGHT - 50);
+    if(contTiempo.getValue()==110){
+        addObject(new Paddle(),(WIDTH / 1),HEIGHT - 50);
         }
+    
+    if(contTiempo.getValue()==0)
+    {
+       message.setText("Tiempo terminado ");
+       Greenfoot.stop();
+       
+    }
     }
     
     private void prepare()

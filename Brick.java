@@ -68,5 +68,12 @@ public class Brick extends Actor
     {
         return(color);
     }
+    
+    public void tocaPelota()
+    {
+        
+
+     
+    }
   
 }

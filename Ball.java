@@ -110,11 +110,14 @@ public class Ball extends Actor
     
     public void tocaCuadro(){
         World mundo = getWorld();
-        Brick aux ;
+        
+        
         if(isTouching(Brick.class)){
+            //setColor(Brick.getColor());
             removeTouching(Brick.class);
             velY=2;
-            setColor(color.GREEN);
+            
+            
         }
         ((BreakoutWorld)mundo).checkIfWon();
     }
@@ -127,7 +130,7 @@ public class Ball extends Actor
     }
     public void limites(){
         
-        World mundo =getWorld();
+        World mundo = getWorld();
         
         if(xdireccion>getWorld().getWidth()-5){
             velX=-1;
@@ -150,7 +153,7 @@ public class Ball extends Actor
     
     public void Ball(){
         World mundo = getWorld();
-       if(ydireccion>500){
+       if(ydireccion>getWorld().getHeight()){
             ((BreakoutWorld)mundo).newBall();
             getWorld().removeObject(this);
         }
